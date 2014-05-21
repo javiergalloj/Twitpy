@@ -16,7 +16,7 @@
 
 # application=default_app()
 #------------------------------------------------------------------------
-#DE AQUÍ PARA ABAJO LA APLICACION
+#DE AQUI PARA ABAJO LA APLICACION
 # -*- encoding: utf-8 -*-
 from bottle import default_app, get, post, template, request, static_file, response, run
 import requests
