@@ -61,7 +61,7 @@ def get_access_token(TOKENS):
 def index():
     get_request_token()
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
-    return template('/views/index.tpl', authorize_url=authorize_url)
+    return template('index.tpl', authorize_url=authorize_url)
 
 # @get('/twittear')
 # def get_verifier():
