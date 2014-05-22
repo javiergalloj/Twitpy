@@ -63,29 +63,29 @@ def index():
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     return template('index.tpl', authorize_url=authorize_url)
 
-# @get('/twittear')
-# def get_verifier():
-#     TOKENS["verifier"] = request.query.oauth_verifier
-#     get_access_token(TOKENS)
-#     return template('tweet')
+@get('/twittear')
+def get_verifier():
+    TOKENS["verifier"] = request.query.oauth_verifier
+    get_access_token(TOKENS)
+    return template('tweet')
 
-# @post('/twittear')
-# def tweet_submit():
-#     texto = request.forms.get("tweet")
-#     oauth = OAuth1(CONSUMER_KEY,
-#                    client_secret=CONSUMER_SECRET,
-#                    resource_owner_key=TOKENS["access_token"],
-#                    resource_owner_secret=TOKENS["access_token_secret"])
+@post('/twittear')
+def tweet_submit():
+    texto = request.forms.get("tweet")
+    oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
     
-#     url = 'https://api.twitter.com/1.1/statuses/update.json'
+    url = 'https://api.twitter.com/1.1/statuses/update.json'
 
-#     r = requests.post(url=url,
-#                       data={"status":texto},
-#                       auth=oauth)
-#     if r.status_code == 200:
-#         return "<p>Tweet properly sent</p>"
-#     else:
-#         return "<p>Unable to send tweet</p>"
+    r = requests.post(url=url,
+                      data={"status":texto},
+                      auth=oauth)
+    if r.status_code == 200:
+        return "<p>Tweet properly sent</p>"
+    else:
+        return "<p>Unable to send tweet</p>"
 
 
 ON_OPENSHIFT = False
