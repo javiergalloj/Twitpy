@@ -18,10 +18,11 @@
 #------------------------------------------------------------------------
 #DE AQUI PARA ABAJO LA APLICACION
 # -*- encoding: utf-8 -*-
-from bottle import default_app, get, post, template, request, static_file, response, run
+from bottle import TEMPLATE_PATH, default_app, get, post, template, request, static_file, response, run
 import requests
 from requests_oauthlib import OAuth1
 from urlparse import parse_qs
+import os
 
 REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
 AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
@@ -86,8 +87,6 @@ def index():
 #     else:
 #         return "<p>Unable to send tweet</p>"
 
-import os
-from bottle import TEMPLATE_PATH
 
 ON_OPENSHIFT = False
 if os.environ.has_key('OPENSHIFT_REPO_DIR'):
