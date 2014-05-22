@@ -87,9 +87,9 @@ def tweet_submit():
                       data={"status":texto},
                       auth=oauth)
     if r.status_code == 200:
-        return "<p>Tweet properly sent</p>"
+        return "<p>Tweet enviado correctamente.</p>"
     else:
-        return "<p>Unable to send tweet</p>"
+        return "<p>Fue imposible enviar el tweet.</p>"
 
 
 ON_OPENSHIFT = False
