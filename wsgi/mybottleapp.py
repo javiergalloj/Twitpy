@@ -18,7 +18,7 @@
 #------------------------------------------------------------------------
 #DE AQUI PARA ABAJO LA APLICACION
 # -*- encoding: utf-8 -*-
-from bottle import TEMPLATE_PATH, default_app, get, post, template, request, static_file, response, run
+from bottle import TEMPLATE_PATH, default_app, get, post, template, request, static_file, response, run, route
 import requests
 from requests_oauthlib import OAuth1
 from urlparse import parse_qs
@@ -56,6 +56,10 @@ def get_access_token(TOKENS):
     credentials = parse_qs(r.content)
     TOKENS["access_token"] = credentials.get('oauth_token')[0]
     TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
+
+@route('/static/<filename>')
+def server_static(filename):
+  return static_file(filename, root='./static')
 
 @get('/')
 def index():
