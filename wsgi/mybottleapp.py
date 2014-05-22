@@ -27,7 +27,7 @@ REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
 AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
 ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
 
-fclaves = open('claves.txt','r')
+fclaves = open(os.path.join(os.path.dirname(__file__),"claves.txt"),'r')
 claves = fclaves.readline()
 clave = claves.split(",")
 CONSUMER_KEY = clave[0]
