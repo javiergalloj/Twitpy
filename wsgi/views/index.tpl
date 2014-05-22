@@ -4,6 +4,6 @@
     <link href="/static/index.css" rel="stylesheet">
   </head>
   <body>
-  	<a class="boton" title="Iniciar sesion" href="{{authorize_url}}">Iniciar sesión</a>
+  	<button type="button" class="btn btn-primary btn-lg btn-block" href="{{authorize_url}}">Iniciar sesión en Twitter</button>
   </body>
 </html>
