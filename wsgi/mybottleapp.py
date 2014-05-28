@@ -5,16 +5,16 @@ from requests_oauthlib import OAuth1
 from urlparse import parse_qs
 import os
 
-REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
-AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
-ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
-
 fclaves = open(os.path.join(os.path.dirname(__file__),"claves.txt"),'r')
 claves = fclaves.readline()
 clave = claves.split(",")
 CONSUMER_KEY = clave[0]
 CONSUMER_SECRET = clave[1]
 TOKENS = {}
+
+REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
+AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
+ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
 
 def get_request_token():
     oauth = OAuth1(CONSUMER_KEY,
@@ -38,6 +38,13 @@ def get_access_token(TOKENS):
     TOKENS["access_token"] = credentials.get('oauth_token')[0]
     TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
 
+def get_timeline():
+    get_request_token()
+    r = requests.get(url="https://api.twitter.com/1.1/statuses/home_timeline.json", auth=oauth)
+    jresp = json.loads (r.text)
+    print jresp
+    return jresp
+
 @route('/static/<filename>')
 def server_static(filename):
   return static_file(filename, root='./static')
@@ -47,6 +54,11 @@ def index():
     get_request_token()
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     return template('index.tpl', authorize_url=authorize_url)
+
+@get('/timeline')
+def timeline():
+  return template('timeline.tpl',jresp=get_timeline())
+    
 
 @get('/twittear')
 def get_verifier():
