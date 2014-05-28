@@ -9,7 +9,6 @@
  box-shadow: 0 5px 5px #5FCAFD, 0 9px 0 #A1A1A5, 0px 9px 10px rgba(0,0,0,0.4), inset 0px 2px 9px rgba(255,255,255,0.2), inset 0 -2px 9px rgba(0,0,0,0.2);
  position: relative;
  border-bottom: 1px solid rgba(255,255,255,0.2);
- display: inline-block;
  font-family: Arial, Helvetica, sans;
  text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
 }
@@ -48,4 +47,16 @@
 
 .colorRojon:active {
  box-shadow: 0 2px 0 #5e2525, 0px 4px 4px rgba(0,0,0,0.4), inset 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+#boton {
+	max-width: 259px;
+}
+
+.centrado {
+	margin: 24% auto;
+}
+
+body {
+	background: #81F7F3
 }

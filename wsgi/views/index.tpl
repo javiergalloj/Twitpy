@@ -4,6 +4,8 @@
     <link href="/static/index.css" rel="stylesheet">
   </head>
   <body>
-  	<a href="{{authorize_url}}" class="boton colorBoton formaBoton">Iniciar sesión en Twitter</a>
+  	<div id="boton" class="centrado"> 
+  		<a href="{{authorize_url}}" class="boton colorBoton formaBoton">Iniciar sesión en Twitter</a>
+  	</div>
   </body>
 </html>
