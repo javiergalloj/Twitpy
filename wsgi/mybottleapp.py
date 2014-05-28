@@ -37,7 +37,6 @@ def get_access_token(TOKENS):
     credentials = parse_qs(r.content)
     TOKENS["access_token"] = credentials.get('oauth_token')[0]
     TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
-    oauth = 
     return oauth
 
 def get_timeline(oauth):
