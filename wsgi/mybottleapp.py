@@ -37,9 +37,11 @@ def get_access_token(TOKENS):
     credentials = parse_qs(r.content)
     TOKENS["access_token"] = credentials.get('oauth_token')[0]
     TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
+    return oauth
 
 def get_timeline():
-    get_request_token()
+    TOKENS["verifier"] = request.query.oauth_verifier
+    oauth = get_access_token(TOKENS)
     r = requests.get(url="https://api.twitter.com/1.1/statuses/home_timeline.json", auth=oauth)
     jresp = json.loads (r.text)
     print jresp
@@ -57,7 +59,7 @@ def index():
 
 @get('/timeline')
 def timeline():
-  return template('timeline.tpl',jresp=get_timeline())
+  return template('timeline.tpl',timeline=get_timeline())
     
 
 @get('/twittear')
