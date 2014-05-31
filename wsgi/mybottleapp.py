@@ -11,28 +11,25 @@ clave = claves.split(",")
 CONSUMER_KEY = clave[0]
 CONSUMER_SECRET = clave[1]
 TOKENS = {}
-
-REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
-AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
-ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
-
-def get_request_token():
-    oauth = OAuth1(CONSUMER_KEY,
-                   client_secret=CONSUMER_SECRET,
-    )
-    r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
-    credentials = parse_qs(r.content)
-    TOKENS["request_token"] = credentials.get('oauth_token')[0]
-    TOKENS["request_token_secret"] = credentials.get('oauth_token_secret')[0]
-
-def get_access_token(TOKENS):
-    oauth = OAuth1(CONSUMER_KEY,
+oauth = OAuth1(CONSUMER_KEY,
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["request_token"],
                    resource_owner_secret=TOKENS["request_token_secret"],
                    verifier=TOKENS["verifier"],
     )
 
+
+REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
+AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
+ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
+
+def get_request_token(oauth):
+    r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
+    credentials = parse_qs(r.content)
+    TOKENS["request_token"] = credentials.get('oauth_token')[0]
+    TOKENS["request_token_secret"] = credentials.get('oauth_token_secret')[0]
+
+def get_access_token(TOKENS, oauth):
     r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
     credentials = parse_qs(r.content)
     TOKENS["access_token"] = credentials.get('oauth_token')[0]
@@ -51,14 +48,11 @@ def server_static(filename):
 
 @get('/')
 def index():
-    get_request_token()
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     return template('index.tpl', authorize_url=authorize_url)
 
-@get('/timeline')
-def timeline():
-  TOKENS["verifier"] = request.query.oauth_verifier
-  oauth = get_access_token(TOKENS)
+@route('/timeline')
+def home_timeline():
   return template('timeline.tpl',timeline=get_timeline(oauth))
     
 
