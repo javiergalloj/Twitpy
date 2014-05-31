@@ -40,10 +40,9 @@ def get_access_token(TOKENS):
     TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
     return oauth
 
-def get_timeline(oauth):
+def ftimeline(oauth):
     r = requests.get(url="https://api.twitter.com/1.1/statuses/home_timeline.json", auth=oauth)
     jresp = json.loads (r.text)
-    print jresp
     return jresp
 
 @route('/static/<filename>')
@@ -57,10 +56,10 @@ def index():
     return template('index.tpl', authorize_url=authorize_url)
 
 @route('/timeline')
-def home_timeline():
+def timeline():
   TOKENS["verifier"] = request.query.oauth_verifier
   oauth = get_access_token(TOKENS)
-  return template('timeline.tpl',timeline=get_timeline(oauth))
+  return template('timeline.tpl',timeline=ftimeline(oauth), oauth=oauth)
     
 
 @get('/twittear')
