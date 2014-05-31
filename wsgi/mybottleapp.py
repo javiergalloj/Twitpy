@@ -57,6 +57,7 @@ def index():
 
 @route('/timeline')
 def home_timeline():
+  TOKENS["verifier"] = request.query.oauth_verifier
   oauth = get_access_token(TOKENS)
   return template('timeline.tpl',timeline=get_timeline(oauth))
     
