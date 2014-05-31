@@ -28,12 +28,9 @@ def get_request_token():
 
 def get_access_token(TOKENS):
     oauth = OAuth1(CONSUMER_KEY,
-                   client_secret=CONSUMER_SECRET,
-                   resource_owner_key=TOKENS["request_token"],
-                   resource_owner_secret=TOKENS["request_token_secret"],
-                   verifier=TOKENS["verifier"],
-    )
-
+                   CONSUMER_SECRET,
+                   TOKENS["request_token"],
+                   TOKENS["request_token_secret"])
     r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
     credentials = parse_qs(r.content)
     TOKENS["access_token"] = credentials.get('oauth_token')[0]
