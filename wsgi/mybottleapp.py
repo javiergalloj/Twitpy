@@ -4,6 +4,7 @@ import requests
 from requests_oauthlib import OAuth1
 from urlparse import parse_qs
 import os
+import json
 
 fclaves = open(os.path.join(os.path.dirname(__file__),"claves.txt"),'r')
 claves = fclaves.readline()
