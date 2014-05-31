@@ -55,7 +55,7 @@ def index():
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     return template('index.tpl', authorize_url=authorize_url)
 
-@get('/timeline')
+@route('/timeline')
 def home_timeline():
   oauth = get_access_token(TOKENS)
   return template('timeline.tpl',timeline=get_timeline(oauth))
