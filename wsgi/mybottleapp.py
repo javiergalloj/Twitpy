@@ -63,7 +63,7 @@ def timeline():
 @get('/twittear')
 def get_verifier():
     TOKENS["verifier"] = request.query.oauth_verifier
-    get_access_token(TOKENS)
+    oauth = get_access_token(TOKENS)
     return template('tweet.tpl')
 
 @post('/twittear')
