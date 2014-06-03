@@ -37,7 +37,7 @@ def get_access_token(TOKENS):
   TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
   return TOKENS
 
-def foauth():
+def foauth(TOKENS):
   TOKENS["verifier"] = request.query.oauth_verifier
   oauth = OAuth1(CONSUMER_KEY,
                 CONSUMER_SECRET,
