@@ -36,8 +36,9 @@ def get_access_token(TOKENS):
     credentials = parse_qs(r.content)
     TOKENS["access_token"] = credentials.get('oauth_token')[0]
     TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
+    return TOKENS
 
-def foauth():
+def foauth(TOKENS):
   oauth = OAuth1(CONSUMER_KEY,
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
@@ -63,7 +64,7 @@ def index():
 @route('/timeline')
 def timeline():
   TOKENS["verifier"] = request.query.oauth_verifier
-  get_access_token(TOKENS)
+  TOKENS = get_access_token(TOKENS)
   oauth = foauth(TOKENS)
   return template('timeline.tpl', oauth=oauth, tokk=TOKENS["verifier"])
 
