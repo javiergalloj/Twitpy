@@ -65,7 +65,7 @@ def timeline():
   TOKENS["verifier"] = request.query.oauth_verifier
   get_access_token(TOKENS)
   oauth = foauth(TOKENS)
-  return template('timeline.tpl',timeline=ftimeline(oauth), oauth=oauth, tokk=TOKENS["verifier"])
+  return template('timeline.tpl', oauth=oauth, tokk=TOKENS["verifier"])
 
 
 @get('/twittear')
