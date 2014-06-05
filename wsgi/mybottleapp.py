@@ -12,6 +12,7 @@ clave = claves.split(",")
 CONSUMER_KEY = clave[0]
 CONSUMER_SECRET = clave[1]
 TOKENS = {}
+autentificacion = ''
 
 REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
 AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
@@ -60,12 +61,19 @@ def index():
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     return template('index.tpl', authorize_url=authorize_url)
 
-@route('/timeline')
-def timeline():
+@post('/')
+def do_login():
   TOKENS["verifier"] = request.query.oauth_verifier
   get_access_token(TOKENS)
-  oauth = foauth()
-  return template('timeline.tpl', timeline=ftimeline(oauth))
+  autentificacion = foauth()
+  return template('timeline.tpl', timeline=ftimeline(autentificacion))
+
+# @route('/timeline')
+# def timeline():
+#   TOKENS["verifier"] = request.query.oauth_verifier
+#   get_access_token(TOKENS)
+#   oauth = foauth()
+#   return template('timeline.tpl', timeline=ftimeline(oauth))
 
 
 # @get('/twittear')
