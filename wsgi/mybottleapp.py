@@ -46,7 +46,7 @@ def foauth():
 
 def ftimeline(oauth):
     r = requests.get(url="https://api.twitter.com/1.1/statuses/home_timeline.json", auth=oauth)
-    jresp = json.load(r.text)
+    jresp = json.loads(r.text)
     return jresp
 
 
