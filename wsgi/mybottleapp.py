@@ -12,7 +12,6 @@ clave = claves.split(",")
 CONSUMER_KEY = clave[0]
 CONSUMER_SECRET = clave[1]
 TOKENS = {}
-autentificacion = ''
 
 REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
 AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
@@ -57,22 +56,16 @@ def server_static(filename):
 
 @get('/')
 def index():
-  if len(autentificacion) == 0:
     get_request_token()
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     return template('index.tpl', authorize_url=authorize_url)
-  else:
-    TOKENS["verifier"] = request.query.oauth_verifier
-    get_access_token(TOKENS)
-    autentificacion = foauth()
-    return template('timeline.tpl', timeline=ftimeline(autentificacion))
 
-# @route('/timeline')
-# def timeline():
-#   TOKENS["verifier"] = request.query.oauth_verifier
-#   get_access_token(TOKENS)
-#   oauth = foauth()
-#   return template('timeline.tpl', timeline=ftimeline(oauth))
+@route('/timeline')
+def timeline():
+  TOKENS["verifier"] = request.query.oauth_verifier
+  get_access_token(TOKENS)
+  oauth = foauth()
+  return template('timeline.tpl', timeline=ftimeline(oauth))
 
 
 # @get('/twittear')
