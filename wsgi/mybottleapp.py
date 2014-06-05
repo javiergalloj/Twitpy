@@ -57,16 +57,15 @@ def server_static(filename):
 
 @get('/')
 def index():
+  if len(autentificacion) == 0:
     get_request_token()
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     return template('index.tpl', authorize_url=authorize_url)
-
-@post('/')
-def do_login():
-  TOKENS["verifier"] = request.query.oauth_verifier
-  get_access_token(TOKENS)
-  autentificacion = foauth()
-  return template('timeline.tpl', timeline=ftimeline(autentificacion))
+  else:
+    TOKENS["verifier"] = request.query.oauth_verifier
+    get_access_token(TOKENS)
+    autentificacion = foauth()
+    return template('timeline.tpl', timeline=ftimeline(autentificacion))
 
 # @route('/timeline')
 # def timeline():
