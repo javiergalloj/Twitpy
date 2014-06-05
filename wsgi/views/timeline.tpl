@@ -1,3 +1,9 @@
-{% for dato in timeline %}
-	<p>{{ dato['text'] }}</p>
-{% endfor %}
+<html>
+	<head>
+	</head>
+	<body>
+	{% for i in timeline %}
+		<p>{{ i['text'] }}</p>
+	{% endfor %}
+	</body>
+</html>
