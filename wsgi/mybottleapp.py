@@ -46,7 +46,7 @@ def foauth():
 
 def ftimeline(oauth):
     r = requests.get(url="https://api.twitter.com/1.1/statuses/home_timeline.json", auth=oauth)
-    jresp = json.loads(r.text)
+    jresp = json.load(r.text)
     return jresp
 
 
@@ -68,29 +68,29 @@ def timeline():
   return template('timeline.tpl', timeline=ftimeline(oauth))
 
 
-@get('/twittear')
-def get_verifier():
-    TOKENS["verifier"] = request.query.oauth_verifier
-    oauth = get_access_token(TOKENS)
-    return template('tweet.tpl')
+# @get('/twittear')
+# def get_verifier():
+#     TOKENS["verifier"] = request.query.oauth_verifier
+#     oauth = get_access_token(TOKENS)
+#     return template('tweet.tpl')
 
-@post('/twittear')
-def tweet_submit():
-    texto = request.forms.get("tweet")
-    oauth = OAuth1(CONSUMER_KEY,
-                   client_secret=CONSUMER_SECRET,
-                   resource_owner_key=TOKENS["access_token"],
-                   resource_owner_secret=TOKENS["access_token_secret"])
+# @post('/twittear')
+# def tweet_submit():
+#     texto = request.forms.get("tweet")
+#     oauth = OAuth1(CONSUMER_KEY,
+#                    client_secret=CONSUMER_SECRET,
+#                    resource_owner_key=TOKENS["access_token"],
+#                    resource_owner_secret=TOKENS["access_token_secret"])
     
-    url = 'https://api.twitter.com/1.1/statuses/update.json'
+#     url = 'https://api.twitter.com/1.1/statuses/update.json'
 
-    r = requests.post(url=url,
-                      data={"status":texto},
-                      auth=oauth)
-    if r.status_code == 200:
-        return "<p>Tweet enviado correctamente.</p>"
-    else:
-        return "<p>Fue imposible enviar el tweet.</p>"
+#     r = requests.post(url=url,
+#                       data={"status":texto},
+#                       auth=oauth)
+#     if r.status_code == 200:
+#         return "<p>Tweet enviado correctamente.</p>"
+#     else:
+#         return "<p>Fue imposible enviar el tweet.</p>"
 
 
 ON_OPENSHIFT = False
