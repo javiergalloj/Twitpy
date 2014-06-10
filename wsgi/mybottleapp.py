@@ -43,8 +43,6 @@ def foauth():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS['access_token'],
                    resource_owner_secret=TOKENS['access_token_secret'])
-  r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
-  credentials = parse_qs(r.content)
   return oauth
 
 def ftimeline(oauth):
