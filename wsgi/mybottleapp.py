@@ -12,6 +12,7 @@ clave = claves.split(",")
 CONSUMER_KEY = clave[0]
 CONSUMER_SECRET = clave[1]
 TOKENS = {}
+oauth = ''
 
 REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
 AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
