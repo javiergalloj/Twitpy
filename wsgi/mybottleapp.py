@@ -38,7 +38,7 @@ def get_access_token(TOKENS):
     TOKENS['access_token'] = credentials.get('oauth_token')[0]
     TOKENS['access_token_secret'] = credentials.get('oauth_token_secret')[0]
 
-def foauth():
+def foauth(TOKENS):
   oauth = OAuth1(CONSUMER_KEY,
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS['access_token'],
@@ -66,7 +66,7 @@ def timeline():
   if ('verifier' in TOKENS) == False:
     TOKENS['verifier'] = request.query.oauth_verifier
     get_access_token(TOKENS)
-  oauth = foauth()
+  oauth = foauth(TOKENS)
   return template('cabecera.tpl'), template('timeline.tpl', timeline=ftimeline(oauth))
 
 # @get('/twittear')
