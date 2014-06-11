@@ -66,7 +66,7 @@ def timeline():
   if ('verifier' in TOKENS) == False:
     TOKENS['verifier'] = request.query.oauth_verifier
     get_access_token(TOKENS)
-    oauth = foauth()
+  oauth = foauth()
   return template('cabecera.tpl'), template('timeline.tpl', timeline=ftimeline(oauth))
 
 # @get('/twittear')
