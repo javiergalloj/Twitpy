@@ -63,7 +63,7 @@ def index():
 
 @route('/timeline')
 def timeline():
-  if ('verifier' in TOKENS) = False:
+  if ('verifier' in TOKENS) == False:
     TOKENS['verifier'] = request.query.oauth_verifier
     get_access_token(TOKENS)
     oauth = foauth()
