@@ -63,9 +63,10 @@ def index():
 
 @route('/timeline')
 def timeline():
-  TOKENS['verifier'] = request.query.oauth_verifier
-  get_access_token(TOKENS)
-  oauth = foauth()
+  if ('verifier' in TOKENS) = False
+    TOKENS['verifier'] = request.query.oauth_verifier
+    get_access_token(TOKENS)
+    oauth = foauth()
   return template('cabecera.tpl'), template('timeline.tpl', timeline=ftimeline(oauth))
 
 # @get('/twittear')
