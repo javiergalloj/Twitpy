@@ -1,3 +1,3 @@
 %for i in timeline:
-	<p>{{i}}</p>
+	<p>{{ i['text'] }}</p>
 %end
