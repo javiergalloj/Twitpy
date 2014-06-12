@@ -85,7 +85,6 @@
 .btn-success:active,
 .btn-success.active {
   background-color: #419641;
-  border-color: #3e8f3e;
 }
 .btn-info {
   background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
