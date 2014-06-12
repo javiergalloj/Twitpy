@@ -51,7 +51,7 @@ def ftimeline(oauth):
     return jresp
 
 
-@route('/static/<filename>')
+@route('/static/<filename>:path>')
 def server_static(filename):
   return static_file(filename, root='./static')
 
@@ -69,6 +69,8 @@ def timeline():
   oauth = foauth(TOKENS)
   return template('cabecera.tpl'), template('timeline.tpl', timeline=ftimeline(oauth))
 
+@route('/cuenta')
+  
 # @get('/twittear')
 # def get_verifier():
 #     TOKENS["verifier"] = request.query.oauth_verifier
