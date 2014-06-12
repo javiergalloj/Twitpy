@@ -48,9 +48,8 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-success btn-lg" role="button">Learn more &raquo;</a></p>
+        <h1>Bienvenidos!</h1>
+        <p>Para empezar a usar Twitpy, lo primero que tenemos que hacer es iniciar sesión en Twitter, para así poder autorizar la aplicación a acceder a la cuenta. Twitpy en ningún momento podrá saber la contraseña de la cuenta ya que al iniciar sesión nos redirige a la página oficial de Twitter.</p>
       </div>
     </div>
 
@@ -63,18 +62,18 @@
         </div>
         <div class="col-md-4">
           <h2>¿Cómo funciona?</h2>
-          <p>Lo primero que tenemos que hacer es autorizar a la aplicación para poder acceder a la cuenta de Twitter. Una vez autorizada, podemos ver nuestra cuenta con una interfaz diferente a la de Twitter.</p>
+          <p>Twitpy funciona haciendo peticiones a la <a href='http://dev.twitter.com'>API de Twitter</a>. Captura la respuesta y la muestra con una interfaz personalizada. Además incluye varias funciones extra.</p>
        </div>
         <div class="col-md-4">
           <h2>Sobre el autor</h2>
-          <p>El proyecto está programado por Javier Gallo. Estoy estudiando actualmente técnico superior de Administración de Sistemas Informáticos en Red en el instituto <a href='http://www.gonzalonazareno.org'>IES Gonzalo Nazareno</a>.</p>
+          <p>El proyecto está programado por Javier Gallo. Cursando actualmente técnico superior de Administración de Sistemas Informáticos en Red en el instituto <a href='http://www.gonzalonazareno.org'>IES Gonzalo Nazareno</a>.</p>
         </div>
       </div>
 
       <hr>
 
       <footer>
-        <p>&copy; Twitpy 2014. Desarrollado por <a href='http://www.twitter.com/javiergalloj'>@JavierGalloJ.</a></p>
+        <p>&copy; Twitpy 2014. Desarrollado por <a href='http://www.twitter.com/javiergalloj'>@JavierGalloJ</a>.</p>
       </footer>
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
