@@ -68,8 +68,6 @@ def timeline():
     get_access_token(TOKENS)
   oauth = foauth(TOKENS)
   return template('cabecera.tpl'), template('timeline.tpl', timeline=ftimeline(oauth))
-
-@route('/cuenta')
   
 # @get('/twittear')
 # def get_verifier():
