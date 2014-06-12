@@ -51,12 +51,13 @@ def ftimeline(oauth):
     return jresp
 
 
-@route('/static/<filename>:path>')
+@route('/static/<filename:path>')
 def server_static(filename):
   return static_file(filename, root='./static')
 
 @get('/')
 def index():
+    
     get_request_token()
     authorize_url = AUTHENTICATE_URL + TOKENS['request_token']
     return template('index.tpl', authorize_url=authorize_url)
