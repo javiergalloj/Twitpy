@@ -48,8 +48,11 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
+        <p>
+        <img src='/static/img/pajaro_color.gif' align='left'>
         <h1>Bienvenidos!</h1>
         <p>Para empezar a usar Twitpy, lo primero que tenemos que hacer es iniciar sesión en Twitter, para así poder autorizar la aplicación a acceder a la cuenta. Twitpy en ningún momento podrá saber la contraseña de la cuenta ya que al iniciar sesión nos redirige a la página oficial de Twitter.</p>
+        </p>
       </div>
     </div>
 
