@@ -5790,3 +5790,25 @@ button.close {
   height: 50px;
 }
 .logotipo span{display:none}
+
+.tweetgris {
+  padding: 30px;
+  margin-bottom: 15px;
+  color: inherit;
+  background-color: #eee;
+}
+.tweetgris p {
+  font-size: 18px;
+  font-weight: 400;
+}
+.tweetblanco {
+  padding: 30px;
+  margin-bottom: 15px;
+  color: inherit;
+  background-color: #eee;
+}
+
+.tweetblanco p {
+  font-size: 18px;
+  font-weight: 400;
+}
