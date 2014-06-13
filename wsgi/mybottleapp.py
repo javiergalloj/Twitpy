@@ -50,7 +50,6 @@ def ftimeline(oauth):
     jresp = json.loads(r.text)
     return jresp
 
-
 @route('/static/<filename:path>')
 def server_static(filename):
   return static_file(filename, root='./static')
@@ -75,7 +74,7 @@ def timeline():
   
 @route('/cerrar')
 def cerrarsesion():
-  del TOKENS['verifier']
+  TOKENS.clear()
   return redirect('/')
 
 @route('/cabecera')
