@@ -40,7 +40,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
-            <a href='/'<button type="submit" class="btn btn-success btn-lg">Iniciar sesión</button></a>
+            <a href='/cerrar'<button type="submit" class="btn btn-success btn-lg">Cerrar sesión</button></a>
           </form>
         </div><!--/.navbar-collapse -->
       </div>

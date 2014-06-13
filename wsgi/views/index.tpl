@@ -51,7 +51,7 @@
         <p>
         <img src='/static/img/pajaro_color.gif' align='left'>
         <h1>Bienvenidos!</h1>
-        <p>Para empezar a usar Twitpy, lo primero que tenemos que hacer es iniciar sesión en Twitter, para así poder autorizar la aplicación a acceder a la cuenta. Twitpy en ningún momento podrá saber la contraseña de la cuenta ya que al iniciar sesión nos redirige a la página oficial de Twitter.</p>
+        <p>Para empezar a usar Twitpy, lo primero que tienes que hacer es iniciar sesión con tu cuenta de Twitter, para así poder autorizar la aplicación a acceder a la cuenta. Twitpy en ningún momento podrá saber la contraseña de la cuenta ya que para iniciar sesión te redirige a la página oficial de Twitter.</p>
         </p>
       </div>
     </div>
