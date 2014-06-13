@@ -68,8 +68,12 @@ def timeline():
     TOKENS['verifier'] = request.query.oauth_verifier
     get_access_token(TOKENS)
   oauth = foauth(TOKENS)
-  return template('cabecera.tpl'), template('timeline.tpl', timeline=ftimeline(oauth))
+  return template('cabecera.tpl'), template('timeline.tpl', timeline=ftimeline(oauth)), template('pie.tpl')
   
+@route('/cabecera')
+def cabecera():
+  return template('cabecera.tpl'), template('pie.tpl')
+
 # @get('/twittear')
 # def get_verifier():
 #     TOKENS["verifier"] = request.query.oauth_verifier
