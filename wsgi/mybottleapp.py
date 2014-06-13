@@ -62,7 +62,7 @@ def index():
     authorize_url = AUTHENTICATE_URL + TOKENS['request_token']
     return template('index.tpl', authorize_url=authorize_url)
   elif ('verifier' in TOKENS) == True:
-    return redirect('/timeline')
+    return template('cabecera.tpl'), template('timeline.tpl', timeline=ftimeline(oauth)), template('pie.tpl')
 
 @route('/timeline')
 def timeline():
