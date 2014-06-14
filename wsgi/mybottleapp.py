@@ -56,12 +56,9 @@ def server_static(filename):
 
 @get('/')
 def index():
-  if ('verifier' in TOKENS) == True:
-    return redirect('/timeline')
-  elif ('verifier' in TOKENS) == False:
-    get_request_token()
-    authorize_url = AUTHENTICATE_URL + TOKENS['request_token']
-    return template('index.tpl', authorize_url=authorize_url)
+  get_request_token()
+  authorize_url = AUTHENTICATE_URL + TOKENS['request_token']
+  return template('index.tpl', authorize_url=authorize_url)
 
 @route('/timeline')
 def timeline():
@@ -74,6 +71,7 @@ def timeline():
 @route('/cerrar')
 def cerrarsesion():
   TOKENS.clear()
+  oauth = ''
   return redirect('/')
 
 @route('/cabecera')
