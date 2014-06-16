@@ -102,7 +102,6 @@ def cabecera():
 #     else:
 #         return "<p>Fue imposible enviar el tweet.</p>"
 
-
 ON_OPENSHIFT = False
 if os.environ.has_key('OPENSHIFT_REPO_DIR'):
     ON_OPENSHIFT = True
