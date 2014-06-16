@@ -5792,8 +5792,7 @@ button.close {
 .logotipo span{display:none}
 
 .tweetgris {
-  padding: 30px;
-  margin-bottom: 15px;
+  padding: 15px;
   color: inherit;
   background-color: #eee;
 }
@@ -5801,9 +5800,12 @@ button.close {
   font-size: 18px;
   font-weight: 400;
 }
+
+.tweetgris:first-child {
+  margin: 15px 0 0 0;
+}
 .tweetblanco {
-  padding: 30px;
-  margin-bottom: 15px;
+  padding: 15px;
   color: inherit;
   background-color: #fff;
 }
