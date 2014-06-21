@@ -22,7 +22,11 @@
 
         <script src="static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script type="text/javascript" src="static/js/jquery.leanModal.min.js"></script>
-        <script type="text/javascript"> $(document).ready(function(){$("#trigger_id").leanModal();});</script>
+        <script type="text/javascript">
+      $(document).ready(function(){
+        $("#trigger_id").leanModal();<!--- <------------------------------- --->
+      });                               <!--- | --->
+    </script>
     </head>
     <body>
         <!--[if lt IE 7]>
