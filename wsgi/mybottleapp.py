@@ -67,7 +67,17 @@ def timeline():
     get_access_token(TOKENS)
   oauth = foauth(TOKENS)
   return template('cabecera.tpl'), template('timeline.tpl', timeline=ftimeline(oauth)), template('pie.tpl')
-  
+
+@post('/twittear')
+def tweet_submit():
+    texto = request.forms.get("tweet")
+    url = 'https://api.twitter.com/1.1/statuses/update.json'
+    r = requests.post(url=url, data={"status":texto}, auth=oauth)
+    if r.status_code == 200:
+        return "<p>Tweet enviado correctamente.</p>"
+    else:
+        return "<p>Error al enviar el tweet.</p>"
+
 @route('/cerrar')
 def cerrarsesion():
   TOKENS.clear()
