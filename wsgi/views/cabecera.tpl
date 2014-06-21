@@ -19,13 +19,7 @@
         </style>
         <link rel="stylesheet" href="static/css/bootstrap-theme.css">
         <link rel="stylesheet" href="static/css/main.css">
-        <script src="static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script type="text/javascript" src="static/js/jquery.leanModal.min.js"></script>
-        <script type="text/javascript">
-          $(document).ready(function(){
-            $("#trigger_id").leanModal();
-          });                               
+        <script src="static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>                               
     </script>
     </head>
     <body>
@@ -44,40 +38,6 @@
           <a class="logotipo" href="/timeline"><span>Twitpy</span></a>
           <a class="navbar-brand" href="/timeline">Home</a>
         </div>
-        <div class="container">                       
-      <a href="#signup" id="trigger_id">Ventanita</a>
-
-    <div id="signup" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -202px; top: 200px;">
-      <div id="signup-ct">
-        <div id="signup-header">
-          <h2>Create a new account</h2>
-          <p>It's simple, and free.</p>
-          <a class="modal_close" href="#"></a>
-        </div>
-        
-        <form action="">
-     
-          <div class="txt-fld">
-            <label for="">Username</label>
-            <input id="" class="good_input" name="" type="text">
-
-          </div>
-          <div class="txt-fld">
-            <label for="">Email address</label>
-            <input id="" name="" type="text">
-          </div>
-          <div class="txt-fld">
-            <label for="">Password</label>
-            <input id="" name="" type="text">
-
-          </div>
-          <div class="btn-fld">
-          <button type="submit">Sign Up »</button>
-          </div>
-         </form>
-      </div>
-    </div>
-    </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <a href='/cerrar'<button type="submit" class="btn btn-success btn-lg">Cerrar sesión</button></a>

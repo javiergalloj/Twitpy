@@ -88,10 +88,6 @@ def cerrarsesion():
 def cabecera():
   return template('cabecera.tpl'), template('pie.tpl')
 
-@route('/prueba')
-def prueba():
-  return template('pruebatweet.tpl')
-
 # @get('/twittear')
 # def get_verifier():
 #     TOKENS["verifier"] = request.query.oauth_verifier
