@@ -90,7 +90,7 @@ def cabecera():
 
 @route('/prueba')
 def prueba():
-  return template('prueba.tpl')
+  return template('pruebatweet.tpl')
 
 # @get('/twittear')
 # def get_verifier():
