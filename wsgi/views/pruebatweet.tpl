@@ -26,7 +26,7 @@
 		.modal_close { position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(../img/modal_close.png); z-index: 2; }
 		</style>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script type="text/javascript" src="jquery.leanModal.min.js"></script>
+		<script type="text/javascript" src="static/js/jquery.leanModal.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$("#trigger_id").leanModal();
