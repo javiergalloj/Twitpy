@@ -22,11 +22,7 @@
 
         <script src="static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script type="text/javascript" src="static/js/jquery.leanModal.min.js"></script>
-        <script type="text/javascript">
-      $(document).ready(function(){
-        $("#trigger_id").leanModal();<!--- <------------------------------- --->
-      });                               <!--- | --->
-    </script>
+        <script type="text/javascript"> $(document).ready(function(){$("#trigger_id").leanModal();});</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -44,23 +40,25 @@
           <a class="logotipo" href="/timeline"><span>Twitpy</span></a>
           <a class="navbar-brand" href="/timeline">Home</a>
         </div>
-        <a href="#publicartweet" id="trigger_id">Tweet</a>
-        <div id="publicartweet" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -202px; top: 200px;">
-            <div id="publicartweet-ct">
-                <div id="publicartweet-header">
-                    <h2>Publicar un nuevo tweet</h2>
-                    <a class="modal_close" href="#"></a>
-                </div>
-                <form action="/publicartweet" method="post">
-                  <div class="txt-fld">
-                    <label for="">Tweet</label>
-                    <input id="tweet" name="tweet" type="text">
+        <div class="container"> 
+          <a href="#publicartweet" id="trigger_id">Tweet</a>
+          <div id="publicartweet" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -202px; top: 200px;">
+              <div id="publicartweet-ct">
+                  <div id="publicartweet-header">
+                      <h2>Publicar un nuevo tweet</h2>
+                      <a class="modal_close" href="#"></a>
                   </div>
-                  <div class="btn-fld">
-                  <button type="submit">Publicar »</button>
-                  </div>
-                 </form>
-            </div>
+                  <form action="/publicartweet" method="post">
+                    <div class="txt-fld">
+                      <label for="">Tweet</label>
+                      <input id="tweet" name="tweet" type="text">
+                    </div>
+                    <div class="btn-fld">
+                    <button type="submit">Publicar</button>
+                    </div>
+                   </form>
+              </div>
+         </div>
         </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
