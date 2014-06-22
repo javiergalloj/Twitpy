@@ -50,10 +50,9 @@
                             </div>
                             <div class="modal-body">
                                 <form action="/twittear" method="post">
-                                    <div class="txt-fld">
-                                        <label for="">Tweet</label>
-                                        <input id="tweet" name="tweet" type="text">
-                                    </div>
+                                    <p><textarea name="tweet" id="textbox" rows="3" cols="60"></textarea></p>
+                                    <p><input type="submit" class="button" value="Enviar" /></p>
+                                </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
