@@ -57,7 +57,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-primary">Twittear</button>
+                                <button type="submit" class="btn btn-primary">Twittear</button>
                              </div>
                         </div>
                     </div>
