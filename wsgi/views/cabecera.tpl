@@ -41,26 +41,23 @@
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Twittear</button>
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">Publicar un nuevo Tweet</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form action="/twittear" method="post">
-                                    <p><textarea name="tweet" id="textbox" rows="3" cols="60"></textarea></p>
-                                    <p><input type="submit" class="button" value="Enviar" /></p>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-primary">Twittear</button>
-                             </div>
-                        </div>
-                    </div>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
                 </div>
+              </div>
+            </div>
             <a href='/cerrar'<button type="submit" class="btn btn-success btn-lg">Cerrar sesión</button></a>
           </form>
         </div><!--/.navbar-collapse -->
