@@ -40,6 +40,28 @@
         </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
+            <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Twittear</button>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Publicar un nuevo Tweet</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/twittear" method="post">
+                                    <div class="txt-fld">
+                                        <label for="">Tweet</label>
+                                        <input id="tweet" name="tweet" type="text">
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary">Twittear</button>
+                             </div>
+                        </div>
+                    </div>
+                </div>
             <a href='/cerrar'<button type="submit" class="btn btn-success btn-lg">Cerrar sesión</button></a>
           </form>
         </div><!--/.navbar-collapse -->
