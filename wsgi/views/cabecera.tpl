@@ -54,10 +54,11 @@
                                         <label for="">Tweet</label>
                                         <input id="tweet" name="tweet" type="text">
                                     </div>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary">Twittear</button>
-                                </form>
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary">Twittear</button>
+                             </div>
                         </div>
                     </div>
                 </div>
