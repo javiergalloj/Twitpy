@@ -41,7 +41,7 @@
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Twittear</button>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: block;">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
