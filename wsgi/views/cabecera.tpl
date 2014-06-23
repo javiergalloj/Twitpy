@@ -46,22 +46,12 @@
           <a class="logotipo" href="/timeline"><span>Twitpy</span></a>
           <a class="navbar-brand" href="/timeline">Home</a>
           <a class="navbar-brand" href="#">Twittear</a>
-          <div id="popover_content_wrapper" style="display: none">
-            <form action="" role="form">
-                <div class="form-group">
-                    <label for="user">User</label>
-                    <input type="text" class="form-control" id="user" placeholder="User" />
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password" />
-                </div>
-                <button type="submit" class="btn btn-default">Sign in</button>
-            </form>
-          </div>
         </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <a href='/cerrar'<button type="submit" class="btn btn-success btn-lg">Cerrar sesión</button></a>
           </form>
+          <button class="btn btn-success btn-lg" data-toggle="popover">Twittear</button>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
