@@ -19,21 +19,11 @@
         </style>
         <link rel="stylesheet" href="static/css/bootstrap-theme.css">
         <link rel="stylesheet" href="static/css/main.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script type="text/javascript">
-            $('button[data-toggle=popover]').popover({ 
-                html : true,
-                //trigger: "click", // може да се смени
-                content: function() {
-                    return $('#popover_content_wrapper').html();
-                }
-            });
-        </script>
+    </script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -45,14 +35,12 @@
           </button>
           <a class="logotipo" href="/timeline"><span>Twitpy</span></a>
           <a class="navbar-brand" href="/timeline">Home</a>
-          <a class="navbar-brand" href="#">Twittear</a>
         </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <a href='/cerrar'<button type="submit" class="btn btn-success btn-lg">Cerrar sesión</button></a>
           </form>
-          <button class="btn btn-success btn-lg" data-toggle="popover">Twittear</button>
-        </div><!--/.navbar-collapse -->
+        </div>
       </div>
     </div>
     <div class="container">
