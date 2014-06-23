@@ -37,22 +37,7 @@
           </button>
           <a class="logotipo" href="/timeline"><span>Twitpy</span></a>
           <a class="navbar-brand" href="/timeline">Home</a>
-          <a class="navbar-brand" data-placement="bottom" data-toggle="popover" data-title="Login" data-container="body" type="button" data-html="true" href="#" id="login" data-original-title="" title="">Twittear</a>
-            <div id="popover-content" class="hide">
-                <form class="form-inline" role="form">
-                    <div class="form-group">
-                        <select class="form-control">
-                            <option>NA</option>
-                            <option>RU</option>
-                            <option>EU</option>
-                            <option>SEA</option>
-                        </select> 
-                        <input placeholder="Name" class="form-control" maxlength="5" type="text">
-                        <button type="submit" class="btn btn-primary">Go To Login »</button>
-                    </div>
-                </form>
-            </div>
-         </div>
+        </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <a href='/cerrar'<button type="submit" class="btn btn-success btn-lg">Cerrar sesión</button></a>
