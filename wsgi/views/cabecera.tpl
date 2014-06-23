@@ -44,29 +44,18 @@
           <div id="signup" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -202px; top: 200px;">
             <div id="signup-ct">
               <div id="signup-header">
-                <h2>Create a new account</h2>
-                <p>It's simple, and free.</p>
+                <h2>Publicar un nuevo Tweet</h2>
+                <p>Máximo 140 caracteres.</p>
                 <a class="modal_close" href="#"></a>
               </div>
               
-              <form action="">
+              <form action="/twittear">
 
                 <div class="txt-fld">
-                  <label for="">Username</label>
-                  <input id="" class="good_input" name="" type="text">
-
-                </div>
-                <div class="txt-fld">
-                  <label for="">Email address</label>
-                  <input id="" name="" type="text">
-                </div>
-                <div class="txt-fld">
-                  <label for="">Password</label>
-                  <input id="" name="" type="text">
-
+                  <p><textarea name="tweet" id="textbox" rows="3" cols="60" maxlength="140"></textarea></p>
                 </div>
                 <div class="btn-fld">
-                <button type="submit">Sign Up »</button>
+                <button type="submit">Publicar »</button>
                 </div>
                </form>
             </div>
