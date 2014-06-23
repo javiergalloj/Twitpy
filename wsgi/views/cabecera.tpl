@@ -49,7 +49,7 @@
                 <a class="modal_close" href="#"></a>
               </div>
               
-              <form action="/twittear">
+              <form action="/twittear" method="post">
 
                 <div class="txt-fld">
                   <p><textarea name="tweet" id="textbox" rows="3" cols="60" maxlength="140"></textarea></p>
