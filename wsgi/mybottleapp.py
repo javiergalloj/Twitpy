@@ -75,10 +75,9 @@ def tweet_submit():
     oauth = foauth(TOKENS)
     r = requests.post(url=url, data={"status":texto}, auth=oauth)
     if r.status_code == 200:
-        return "<p>Tweet enviado correctamente. Tweet: %s</p>" % texto
+        return return template('cabecera.tpl'), template('estado.tpl', estado=1), template('timeline.tpl', timeline=ftimeline(oauth)), template('pie.tpl')
     else:
-        return "<p>Error al enviar el tweet. Tweet: %s</p>" % texto
-
+        return return template('cabecera.tpl'), template('estado.tpl', estado=0), template('timeline.tpl', timeline=ftimeline(oauth)), template('pie.tpl')
 @route('/cerrar')
 def cerrarsesion():
   TOKENS.clear()
