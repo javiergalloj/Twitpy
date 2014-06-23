@@ -19,8 +19,16 @@
         </style>
         <link rel="stylesheet" href="static/css/bootstrap-theme.css">
         <link rel="stylesheet" href="static/css/main.css">
-        <script src="static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>                               
-    </script>
+        <script src="static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script type="text/javascript">
+            $('button[data-toggle=popover]').popover({ 
+                html : true,
+                //trigger: "click", // може да се смени
+                content: function() {
+                    return $('#popover_content_wrapper').html();
+                }
+            });
+        </script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -37,6 +45,18 @@
           </button>
           <a class="logotipo" href="/timeline"><span>Twitpy</span></a>
           <a class="navbar-brand" href="/timeline">Home</a>
+          <a class="navbar-brand" href="#">Twittear</a>
+          <div id="popover_content_wrapper" style="display: none">
+            <form action="" role="form">
+                <div class="form-group">
+                    <label for="user">User</label>
+                    <input type="text" class="form-control" id="user" placeholder="User" />
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" />
+                </div>
+                <button type="submit" class="btn btn-default">Sign in</button>
+            </form>
+          </div>
         </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
