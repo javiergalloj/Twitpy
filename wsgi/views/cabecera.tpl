@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="static/css/main.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script type="text/javascript" src="jquery.leanModal.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.leanModal.min.js"></script>
         <script type="text/javascript">
           $(document).ready(function(){
             $("#trigger_id").leanModal();
