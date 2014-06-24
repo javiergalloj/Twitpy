@@ -40,7 +40,7 @@
           </button>
           <a class="logotipo" href="/timeline"><span>Twitpy</span></a>
           <a class="navbar-brand" href="/timeline">Home</a>
-          <a href="#signup" id="trigger_id">Ventanita</a>
+          <a class="navbar-brand" href="#signup" id="trigger_id">Twittear</a>
           <div id="signup" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -202px; top: 200px;">
             <div id="signup-ct">
               <div id="signup-header">
